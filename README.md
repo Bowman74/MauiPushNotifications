@@ -115,9 +115,6 @@ then register the device. You will need a reference to the `INotificationRegistr
 
 - Ensure there is a entitlements.plist file with the push notifications entitlement
 
-#### MacCatalyst
-Same as iOS
-
 #### Android
 - Ensure your `google-services.json` file is included in the Android platform folder.
 
