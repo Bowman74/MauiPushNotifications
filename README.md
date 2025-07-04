@@ -144,12 +144,12 @@ Like with iOS and MacCatalyst, you will need to get a reference to the Android i
 
 ```
 #if ANDROID
-	var permissionStatus = await PermissionChecker.CheckPermissions();
-	if (permissionStatus == PermissionStatus.Granted)
-	{
-        var message = new RegisterDeviceMessage();
-        _notificationRegistrationService.RegisterDevice(message);
-    }
+var permissionStatus = await PermissionChecker.CheckPermissions();
+if (permissionStatus == PermissionStatus.Granted)
+{
+    var message = new RegisterDeviceMessage();
+    _notificationRegistrationService.RegisterDevice(message);
+}
 #endif
 ```
 
