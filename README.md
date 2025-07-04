@@ -136,11 +136,11 @@ Same as iOS
 <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 ```
 
-- On the `App.xaml.cs` file, in the OnStart event, you can ask the user for notificaiton permissions
-The library does have a default implementation to request permissions
-You can use it, or provide your own implementation to request permissions
+- On the `App.xaml.cs` file, in the OnStart event, you can ask the user for notificaiton permissions.
+The library does have a default implementation to request permissions.
+You can use it, or provide your own implementation to request permissions.
 Like with iOS and MacCatalyst, you will need to get a reference to the Android implementation of
-`INotificationRegistrationService` to register the device
+`INotificationRegistrationService` to register the device.
 
 ```
 #if ANDROID
