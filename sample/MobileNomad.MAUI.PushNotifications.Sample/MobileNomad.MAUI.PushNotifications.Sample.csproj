@@ -80,13 +80,20 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\..\src\MobileNomad.MAUI.PushNotifications.Core\MobileNomad.MAUI.PushNotifications.Core.csproj" />
-		<ProjectReference Include="..\..\src\MobileNomad.MAUI.PushNotificaitons.APNS\MobileNomad.MAUI.PushNotifications.APNS.csproj" />
-		<ProjectReference Include="..\..\src\MobileNomad.MAUI.PushNotifications.FCM\MobileNomad.MAUI.PushNotifications.FCM.csproj" />
-	</ItemGroup>
-
     <ItemGroup>
         <GoogleServicesJson Include="Platforms\Android\google-services.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MobileNomad.MAUI.PushNotificaitons.APNS\MobileNomad.MAUI.PushNotifications.APNS.csproj" />
+        <ProjectReference Include="..\..\src\MobileNomad.MAUI.PushNotifications.FCM\MobileNomad.MAUI.PushNotifications.FCM.csproj" />
+        <ProjectReference Include="..\..\src\MobileNomad.MAUI.PushNotifications.WNS\MobileNomad.MAUI.PushNotifications.WNS.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)'=='Release'">
+        <PackageReference Include="MobileNomad.MAUI.PushNotifications.Core" Version="1.0.*" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(Configuration)'!='Release'">
+        <ProjectReference Include="..\MobileNomad.MAUI.PushNotifications.Core\MobileNomad.MAUI.PushNotifications.Core.csproj" />
     </ItemGroup>
 </Project>

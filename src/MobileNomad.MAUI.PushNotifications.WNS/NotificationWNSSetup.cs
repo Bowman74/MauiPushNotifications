@@ -1,5 +1,4 @@
-﻿using Android.OS;
-
+﻿
 namespace MobileNomad.MAUI.PushNotifications;
 
 public static class NotificationWNSSetup
