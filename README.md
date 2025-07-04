@@ -50,9 +50,12 @@ This library provides a unified, platform-specific implementation for push notif
 ### 1. Installation
 
 Add references to the required projects in your MAUI application:
+```
 <PackageReference Include="MobileNomad.MAUI.PushNotifications.Core" Version="1.0.0" />
 <PackageReference Include="MobileNomad.MAUI.PushNotifications.APNS" Version="1.0.1" />
 <PackageReference Include="MobileNomad.MAUI.PushNotifications.FCM" Version="1.0.1" />
+```
+
 ### 2. Setup in MauiProgram.cs
 
 Configure the notification services in your `MauiProgram.cs`:
