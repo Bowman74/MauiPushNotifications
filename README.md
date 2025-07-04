@@ -50,9 +50,9 @@ This library provides a unified, platform-specific implementation for push notif
 ### 1. Installation
 
 Add references to the required projects in your MAUI application:
-<ProjectReference Include="path\to\MobileNomad.MAUI.PushNotifications.Core.csproj" />
-<ProjectReference Include="path\to\MobileNomad.MAUI.PushNotifications.APNS.csproj" />
-<ProjectReference Include="path\to\MobileNomad.MAUI.PushNotifications.FCM.csproj" />
+<PackageReference Include="MobileNomad.MAUI.PushNotifications.Core" Version="1.0.0" />
+<PackageReference Include="MobileNomad.MAUI.PushNotifications.APNS" Version="1.0.1" />
+<PackageReference Include="MobileNomad.MAUI.PushNotifications.FCM" Version="1.0.1" />
 ### 2. Setup in MauiProgram.cs
 
 Configure the notification services in your `MauiProgram.cs`:
@@ -82,7 +82,7 @@ You'll need:
 ### 4. Platform-Specific Setup
 
 #### iOS/Mac Catalyst
-Add notification setup to your `AppDelegate`:
+- Add notification setup to your `AppDelegate`:
 ```
 using MobileNomad.MAUI.PushNotifications.APNS;
 
@@ -97,8 +97,58 @@ public class AppDelegate : MauiUIApplicationDelegate
     }
 }
 ```
+
+- Then in the register for remote notifications event, use the received token to register for notifications
+then register the device. You will need a reference to the `INotificationRegistrationService` to call the registration method:
+
+```
+    [Export("application:didRegisterForRemoteNotificationsWithDeviceToken:")]
+    public void RegisteredForRemoteNotificationsWithDeviceToken(UIApplication application, NSData deviceToken)
+    {
+        var message = AppDelegateHelpers.GetRegisterDeviceMessage(deviceToken);
+        _notificationRegistrationService.RegisterDevice(message);
+    }
+```
+
+- Ensure there is a entitlements.plist file with the push notifications entitlement
+
+#### MacCatalyst
+Same as iOS
+
 #### Android
-Ensure your `google-services.json` file is included in the Android platform folder.
+- Ensure your `google-services.json` file is included in the Android platform folder.
+
+- Add the following to the project file to load the `google-services.json` file:
+
+```
+<ItemGroup>
+    <GoogleServicesJson Include="Platforms\Android\google-services.json" />
+</ItemGroup>
+```
+
+- Ensure the `AndroidManifest.xml` has the following permissions:
+```
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+```
+
+- On the `App.xaml.cs` file, in the OnStart event, you can ask the user for notificaiton permissions
+The library does have a default implementation to request permissions
+You can use it, or provide your own implementation to request permissions
+Like with iOS and MacCatalyst, you get a reference to an implementation of
+`INotificationRegistrationService` to register the device
+
+```
+#if ANDROID
+	var permissionStatus = await PermissionChecker.CheckPermissions();
+	if (permissionStatus == PermissionStatus.Granted)
+	{
+        var message = new RegisterDeviceMessage();
+        _notificationRegistrationService.RegisterDevice(message);
+    }
+#endif
+```
 
 ## Architecture
 
@@ -130,7 +180,7 @@ Ensure your `google-services.json` file is included in the Android platform fold
 - **Android**: API 21+ (via FCM)
 - **iOS**: 15.0+ (via APNS)
 - **Mac Catalyst**: 15.0+ (via APNS)
-- **Windows**: 10.0.17763.0+ (via WNS - implementation status may vary)
+- **Windows**: 10.0.17763.0+ (via WNS - implementation still in progress)
 
 ## Dependencies
 
