@@ -139,7 +139,7 @@ Same as iOS
 - On the `App.xaml.cs` file, in the OnStart event, you can ask the user for notificaiton permissions
 The library does have a default implementation to request permissions
 You can use it, or provide your own implementation to request permissions
-Like with iOS and MacCatalyst, you get a reference to an implementation of
+Like with iOS and MacCatalyst, you will need to get a reference to the Android implementation of
 `INotificationRegistrationService` to register the device
 
 ```
