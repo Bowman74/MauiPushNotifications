@@ -56,6 +56,7 @@ Add references to the required projects in your MAUI application:
 ### 2. Setup in MauiProgram.cs
 
 Configure the notification services in your `MauiProgram.cs`:
+```
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
@@ -70,6 +71,7 @@ public static class MauiProgram
         return builder.Build();
     }
 }
+```
 ### 3. Azure Notification Hub Configuration
 
 You'll need:
@@ -81,6 +83,7 @@ You'll need:
 
 #### iOS/Mac Catalyst
 Add notification setup to your `AppDelegate`:
+```
 using MobileNomad.MAUI.PushNotifications.APNS;
 
 public class AppDelegate : MauiUIApplicationDelegate
@@ -93,6 +96,7 @@ public class AppDelegate : MauiUIApplicationDelegate
         return base.FinishedLaunching(application, launchOptions);
     }
 }
+```
 #### Android
 Ensure your `google-services.json` file is included in the Android platform folder.
 
