@@ -33,6 +33,10 @@ This library provides a unified, platform-specific implementation for push notif
 - **Purpose**: Firebase Cloud Messaging implementation for Android
 - **Platforms**: Android API 21+
 - **Dependencies**: Xamarin.Firebase.Messaging
+- **Key Components**:
+  - `NotificationRegistrationService` with Google Play Services validation and Android device ID management
+  - `FCMMessagingService` for handling incoming push notifications with configurable notification channels
+  - Built-in permission checking utilities
 
 #### **MobileNomad.MAUI.PushNotifications.WNS**
 - **Note**: This project is in progress.
@@ -53,7 +57,7 @@ Add references to the required projects in your MAUI application:
 ```
 <PackageReference Include="MobileNomad.MAUI.PushNotifications.Core" Version="1.0.0" />
 <PackageReference Include="MobileNomad.MAUI.PushNotifications.APNS" Version="1.0.1" />
-<PackageReference Include="MobileNomad.MAUI.PushNotifications.FCM" Version="1.0.1" />
+<PackageReference Include="MobileNomad.MAUI.PushNotifications.FCM" Version="1.0.2" />
 ```
 
 ### 2. Setup in MauiProgram.cs
@@ -150,6 +154,11 @@ if (permissionStatus == PermissionStatus.Granted)
 #endif
 ```
 
+- If required, override the default notificaiton channel Id and channel name.
+```
+FCMMessagingService.DefaultChannelId = "some id value";
+FCMMessagingService.ChannelName = "some name value";
+```
 ## Architecture
 
 ### Key Features

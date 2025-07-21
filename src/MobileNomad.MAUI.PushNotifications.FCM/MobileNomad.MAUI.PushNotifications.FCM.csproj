@@ -29,49 +29,49 @@
 		<RepositoryUrl>https://github.com/Bowman74/MauiPushNotifications</RepositoryUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-		<Version>1.0.1</Version>
-		<AssemblyVersion>1.0.1</AssemblyVersion>
-		<FileVersion>1.0.1</FileVersion>
+		<Version>1.0.2</Version>
+		<AssemblyVersion>1.0.2</AssemblyVersion>
+		<FileVersion>1.0.2</FileVersion>
 	</PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-maccatalyst|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.19041.0|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-maccatalyst|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows10.0.19041.0|AnyCPU'">
-      <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-      <ApplicationVersion>2</ApplicationVersion>
+      <ApplicationDisplayVersion>1.0.2</ApplicationDisplayVersion>
+      <ApplicationVersion>3</ApplicationVersion>
     </PropertyGroup>
 
 	<ItemGroup>

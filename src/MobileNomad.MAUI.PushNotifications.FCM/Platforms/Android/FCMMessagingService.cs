@@ -10,6 +10,9 @@ namespace MobileNomad.MAUI.PushNotifications.FCM;
 public class FCMMessagingService : FirebaseMessagingService
 {
     int messageId = 0;
+
+    public static string DefaultChannelId = "AzurePushNotificaitons";
+    public static string ChannelName = "Azure Notification Channel";
     
     public override void OnMessageReceived(RemoteMessage message)
     {
@@ -34,7 +37,7 @@ public class FCMMessagingService : FirebaseMessagingService
             var manager = (NotificationManager?)AndroidApp.Application.Context.GetSystemService(NotificationService);
             if (manager != null)
             {
-                var channel = new AndroidApp.NotificationChannel(notification.ChannelId ?? "QRTracker", "QRTracker", NotificationImportance.Max);
+                var channel = new AndroidApp.NotificationChannel(notification.ChannelId ?? DefaultChannelId, ChannelName, NotificationImportance.Max);
                 manager.CreateNotificationChannel(channel);
 
                 var displayNotification = new AndroidApp.Notification.Builder(AndroidApp.Application.Context, channel.Id)
